@@ -12,6 +12,7 @@ import com.HotelBookingBackend.Booking.Request.AddHotelRequest;
 import com.HotelBookingBackend.Booking.Request.AddUserRequest;
 import com.HotelBookingBackend.Booking.Request.UpdateHotelRequest;
 import com.HotelBookingBackend.Booking.Request.UpdateUserRequest;
+import com.HotelBookingBackend.Booking.Request.searchHotelInAreaRequest;
 import com.HotelBookingBackend.Booking.Response.Response;
 import com.HotelBookingBackend.Booking.Service.HotelService;
 
@@ -36,6 +37,10 @@ public class HotelController {
 	public Response deleteHotel(@RequestParam Long id) {
 		return hotelService.deleteHotel(id);
 		
+	}
+	@PostMapping(path = "/searchHotelInArea")
+	public Response searchHotelInArea(@RequestBody searchHotelInAreaRequest searchhotel) {
+		return hotelService.searchHotelInArea(searchhotel);
 	}
 
 }
